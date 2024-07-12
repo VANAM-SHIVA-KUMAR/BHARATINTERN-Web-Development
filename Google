@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="google-logo">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+    </div>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search Google or type a URL">
+        <div class="buttons">
+            <button onclick="searchGoogle()">Google Search</button>
+            <button onclick="imFeelingLucky()">I'm Feeling Lucky</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.google-logo img {
+    width: 272px;
+    height: 92px;
+}
+
+.search-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-container input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    box-shadow: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-container .buttons {
+    margin-top: 20px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+    color: #5f6368;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #f8f9fa;
+}
+function searchGoogle() {
+    const query = document.getElementById('search').value;
+    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+}
+
+function imFeelingLucky() {
+    const query = document.getElementById('search').value;
+    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}&btnI=I`;
+}
